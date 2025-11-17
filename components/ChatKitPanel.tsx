@@ -274,8 +274,9 @@ export function ChatKitPanel({
     composer: {
       placeholder: PLACEHOLDER_INPUT,
       attachments: {
-        // Enable attachments
         enabled: true,
+        maxCount: 5,
+        maxSize: 10485760, // 10MB in bytes
       },
     },
     threadItemActions: {
@@ -344,7 +345,7 @@ export function ChatKitPanel({
   }
 
   return (
-    <div className="relative pb-8 flex h-[90vh] w-full rounded-2xl flex-col overflow-hidden bg-white shadow-sm transition-colors dark:bg-slate-900">
+    <div className="relative flex h-full w-full flex-col overflow-hidden">
       <ChatKit
         key={widgetInstanceKey}
         control={chatkit.control}
